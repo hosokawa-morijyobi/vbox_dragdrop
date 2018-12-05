@@ -2,6 +2,8 @@ package application;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderStrokeStyle;
@@ -25,21 +27,28 @@ public class Vbox3 extends VBox {
 		label1=new Label(this.koma.getKamoku());
 		label2=new Label(this.koma.getTeacher());
 		label3=new Label(this.koma.getKyoushitu());
-		
+
 		label1.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, null, null)));
 		label1.setAlignment(Pos.CENTER);
 		label2.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, null, null)));
 		label2.setAlignment(Pos.CENTER);
 		label3.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, null, null)));
 		label3.setAlignment(Pos.CENTER);
-		
+
 		this.getChildren().add(label1);
 		this.getChildren().add(label2);
 		this.getChildren().add(label3);
 
-
+		this.setOnMouseDragged(event -> buttonDragged(event));
 	}
 
+	private void buttonDragged(MouseEvent event){
+
+		//取得した座標にアンカーを再設定する。
+		AnchorPane.setTopAnchor(this, event.getSceneY());
+		AnchorPane.setLeftAnchor(this, event.getSceneX());
+
+	}
 
 
 }

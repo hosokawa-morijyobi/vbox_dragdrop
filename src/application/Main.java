@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
@@ -40,7 +39,7 @@ public class Main extends Application {
 
 
 		//label.setOnMouseDragged( event -> buttonDragged(event) );
-	    vb3.setOnMouseDragged(event -> buttonDragged(event));
+//	    vb3.setOnMouseDragged(event -> buttonDragged(event));
 
 		AnchorPane root = new AnchorPane();
 		AnchorPane.setTopAnchor(vb3, 20.0);
@@ -52,13 +51,13 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 
-	private void buttonDragged(MouseEvent event){
-
-		//取得した座標にアンカーを再設定する。
-		AnchorPane.setTopAnchor(vb3, event.getSceneY());
-		AnchorPane.setLeftAnchor(vb3, event.getSceneX());
-
-	}
+//	private void buttonDragged(MouseEvent event){
+//
+//		//取得した座標にアンカーを再設定する。
+//		AnchorPane.setTopAnchor(vb3, event.getSceneY());
+//		AnchorPane.setLeftAnchor(vb3, event.getSceneX());
+//
+//	}
 
 	public static void main(String[] args) {
 		launch();
